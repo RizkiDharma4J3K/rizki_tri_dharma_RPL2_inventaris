@@ -1,0 +1,203 @@
+/* ==========================================================
+   DASHBOARD INVENTARIS – DESAIN SUPER SIMPLE TANPA ANIMASI
+   ========================================================== */
+
+/* ===== FONT & WARNA ===== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+:root {
+  --bg-main: #f5f7fa;
+  --bg-white: #ffffff;
+  --sidebar-bg: #e6ebf1;
+
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+
+  --danger: #ef4444;
+  --success: #10b981;
+
+  --radius: 8px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* ===== BASE ===== */
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg-main);
+  margin: 0;
+  padding: 0;
+  color: var(--text-dark);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ===== SIDEBAR ===== */
+#sidebar-wrapper {
+  width: 220px;
+  height: 100vh;
+  background: var(--sidebar-bg);
+  padding-top: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  display: none;
+}
+
+.sidebar-heading {
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 1rem;
+  text-align: center;
+  color: var(--primary);
+}
+
+.list-group-item {
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  color: var(--text-dark);
+}
+
+.list-group-item.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* ===== PAGE CONTENT ===== */
+#page-content-wrapper {
+  margin-left: 220px;
+  padding: 1rem 1.2rem;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  margin-left: 0;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: var(--bg-white);
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menu-toggle {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 5px;
+}
+
+/* ===== MAIN CONTENT ===== */
+.dashboard-header h1 {
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+
+.dashboard-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ===== SIMPLE CARDS ===== */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.dashboard-card {
+  background: var(--bg-white);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.dashboard-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+/* ===== STAT ===== */
+.stat-number {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+}
+
+.btn-success {
+  background: var(--success);
+  color: white;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  background: var(--primary);
+  color: white;
+  text-align: left;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== BADGE ===== */
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: white;
+}
+
+.bg-danger { background: var(--danger); }
+.bg-success { background: var(--success); }
